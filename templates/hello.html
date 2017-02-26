@@ -1,12 +1,41 @@
 <!doctype html>
-<title>Sentiment Demo</title>
-<form action="{{ url_for('index_page') }}" method=post>
-    <dl>
-        <dt>Введите/вставьте пример отзыва на банк: <br>
-        <dd><textarea name=text rows=5 cols=40>{{ text }}</textarea>
-        <dd><input type=submit value="Оценить">
-    </dl>
+<title>Speaker Verification Demo</title>
+
+<br>List of Users:<br>
+<table>
+{% for key, value in users.iteritems() %}
+   <tr>
+        <th> {{ key }} </th>
+        <td> {{ value }} </td>
+   </tr>
+{% endfor %}
+</table>
+
+<form method=post>
+	<p><br> Remove previously saved data
+	<input type=submit value='Reset' name=bsubmit>
+	</p>
 </form>
 
-<br>Sentiment prediction:<br>
-{{ prediction_message }}
+<form method=post enctype=multipart/form-data>
+	<p><br>Upload file for testing:<br>
+	<input type=file name=file_for_test>
+	   <input type=submit value='Upload' name=bsubmit>
+	</p>
+</form>
+
+
+<form method=post enctype=multipart/form-data>
+	<p><br>Upload multiple files for trainig (new or existing user):
+	<br>Input user id for training (from the list above).<br>
+        Or just input a name for new user!<br>
+        <textarea name=userid rows=5 cols=40>{{ userid }}</textarea>
+    <br>
+    	<input type=file name=files_for_training multiple="">
+	   	<input type=submit value='Upload files' name=bsubmit>
+	</p>
+</form>
+
+
+<br>Recognized speaker:<br>
+{{ prediction }}
