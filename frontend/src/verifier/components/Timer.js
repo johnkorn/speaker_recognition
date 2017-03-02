@@ -161,6 +161,7 @@ export default class Timer extends Component {
             </li>
           ))}
         </ul>
+        <br />
         <p style={{display: (!this.state.playing && this.state.files.length < this.props.max) ? 'initial' : 'none'}}>
           <input
             type="button"
