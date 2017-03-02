@@ -57,8 +57,8 @@ class TrainResource(Resource):
                 filenames.append(full_path)
             else:
                 abort(400, message="Selected file {} is not in WAV or FLAC format!".format(file.filename))
-
-        if (userid) and (userid in db_users.keys()):
+        users = verifier.get_users()
+        if (userid) and (userid in users.keys()):
             verifier.train_existing_user(filenames, userid)
         else:
             verifier.train_new_user(filenames, userid)
