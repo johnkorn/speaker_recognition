@@ -1,0 +1,40 @@
+.btn-controll {
+    background-color: #5cb85c;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-controll[disabled] {
+    background-color: #449d44;
+    cursor: default;
+}
+
+.button {
+    background-color: #d9232d;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button[disabled] {
+    cursor: default;
+    background-color: #e73a44;
+    background-image: url(http://velkom-promo.ru/static/main/img/btn-load.90492f7d5c28.gif);
+    color: rgba(255, 255, 255, 0.3);
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
