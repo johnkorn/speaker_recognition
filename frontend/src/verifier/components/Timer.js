@@ -45,7 +45,10 @@ export default class Timer extends Component {
       const input = this.audioContext.createMediaStreamSource(stream);
       console.log('Media stream created.');
 
-      this.recorder = new Recorder(input);
+      this.recorder = new Recorder(input, {
+        bufferLen: 1024,
+        numChannels: 1
+      });
       console.log('Recorder initialised.');
     }, (e) => {
       console.error('No live audio input: ' + e);
